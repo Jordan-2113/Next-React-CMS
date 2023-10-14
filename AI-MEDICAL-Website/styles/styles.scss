@@ -1,0 +1,30 @@
+@import "./variables";
+@import "./override";
+
+@import "~bootstrap/dist/css/bootstrap-grid.min.css";
+
+@import "./mixin";
+
+@import "./header";
+@import "./footer";
+@import "./home";
+
+@import "./components/header";
+@import "./components/button";
+@import "./components/main-container";
+@import "./components/download-app-badge";
+@import "./components/page-title";
+@import "./components/nav";
+@import "./components/clip";
+@import "./components/back-to-top";
+@import "./components/horz-line";
+@import "./components/appearance";
+@import "./components/arrow-button";
+@import "./components/shortcut";
+@import "./components/popup";
+
+@import "./pages/about";
+@import "./pages/team";
+@import "./pages/home";
+@import "./pages/doctor";
+@import "./pages/app-privacy";

@@ -1,0 +1,104 @@
+@import '../variables';
+
+.card{
+    &--wrapper{
+        width: 330px;
+        height: 100%;
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid transparent;
+        box-shadow: $blockBoxShadow;
+        .bulk-select-bar--selectable > &{
+            position: relative;
+            &::before{
+                content: "";
+                position: absolute;
+                top: 6px;
+                left: 8px;
+                border-top: 2px solid rgba($color: #000000, $alpha: .3);
+                border-right: 2px solid rgba($color: #000000, $alpha: .3);
+                height: 5px;
+                width: 10px;
+                transform: rotate(135deg);
+                cursor: pointer;
+                transition: .3s;
+            }
+        }
+        .bulk-select-bar--selected > &{
+            &::before{
+                border-top: 2px solid #000000;
+                border-right: 2px solid #000000;
+            }
+        }
+        .theme--dark &{
+            background-color: #2d2d2d;
+        }
+        .bulk-select-bar--selected > &{
+            background-color: scale-color($themeColor, $lightness: 97%);
+            border: 1px solid #d1d1d1;
+            .theme--dark &{
+                background-color: grayscale(darken($color: $backgroundColor, $amount: 85%));
+                border-color: #666666;
+            }
+        }
+    }
+    &--pic{
+        width: 100%;
+        padding-top: 55%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    &--body{
+        padding: 1.2em;
+        margin: -8px 0;
+    }
+    &--title{
+        margin: 8px 0;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    &--intro{
+        margin: 8px 0;
+    }
+    &--attrs{
+        margin: 2.5px -16px;
+        display: flex;
+        align-items: stretch;
+        flex-wrap: wrap;
+        min-height: 42px;
+    }
+    &--attr{
+        display: inline-flex;
+        flex-direction: column;
+        margin: 3px 0;
+        padding: 0 16px;
+        max-width: 100%;
+        &-title{
+            color: #757575;
+            font-size: .85em;
+            line-height: 1.1;
+            margin-bottom: .1em;
+            .theme--dark &{
+                color: #b7b7b7;
+            }
+        }
+        &-contents{
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: 350px;
+            line-height: 1.25;
+        }
+    }
+    &--actions{
+        margin: 5px -3px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    &--action{
+        padding: 3px;
+    }
+}

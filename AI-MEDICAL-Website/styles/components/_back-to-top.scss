@@ -1,0 +1,15 @@
+.back-to-top{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    box-shadow: 0 3px 6px rgba(#000, .16);
+    z-index: 99;
+    &--wrapper{
+        border: 0;
+        padding: 0;
+        img{
+            width: 100%;
+        }
+    }
+}

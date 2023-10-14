@@ -1,0 +1,185 @@
+@import '../variables';
+
+.panel-nav{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    // filter for popup-side-panel
+    transition: width .3s, box-shadow .3s;
+    z-index: 999;
+    .float-open > &{
+        width: $navWidth;
+        box-shadow: 0 0 12px rgba(0, 0, 0, .05);
+    }
+    .theme--dark &{
+        background-color: #2d2d2d;
+    }
+    &--head{
+        flex: 0 1 auto;
+        display: flex;
+        align-items: center;
+        padding: 1em;
+        a{
+            display: inline-block;
+            padding-right: 5px;
+            font-size: 0;
+            transition: opacity .3s;
+        }
+        img{
+            // width: 100%;
+            // max-width: 230px;
+            height: 75px;
+            border: 0;
+        }
+        &-tgc{
+            background-color: transparent;
+            border: 0;
+            -webkit-appearance: none;
+            padding: 5px 5px;
+            margin-right: 12px;
+            font-size: 0;
+            cursor: pointer;
+            outline: none;
+            svg{
+                width: 20px;
+                height: 20px;
+            }
+            path{
+                stroke: #000;
+                stroke-width: 2px;
+                .theme--dark &{
+                    stroke: #e8e8e8;
+                }
+            }
+        }
+        .hide-nav &{
+            a{
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+        .float-open &{
+            a{
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+        @media (min-width: 1300px) {
+            &-tgc{
+                display: none;
+            }
+        }
+    }
+    &--core{
+        flex: 1 1 50%;
+        padding: 1em 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        &-wrapper{
+            display: table;
+            height: 100%;
+            width: 100%;
+        }
+        &-body{
+            display: table-cell;
+        }
+        &-hr{
+            height: 1px;
+            width: 80px;
+            background-color: #dfdfdf;
+            margin: 1em 1em;
+            transition: width .3s;
+        }
+        &-l-1{
+            display: flex;
+            padding: 0 1em;
+            margin: .5em 0;
+            width: $navWidth;
+            &.active{
+                position: relative;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    height: 90%;
+                    width: 4px;
+                    background-color: $themeColor;
+                    transform: translateY(-50%);
+                    border-radius: 5px;
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+            }
+            &-item{
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                font-size: 1.1em;
+                font-weight: bold;
+                color: $color;
+                opacity: .7;
+                width: 100%;
+                user-select: none;
+                padding: .4em 0;
+                &:hover{
+                    opacity: 1;
+                }
+                &-svg{
+                    margin-right: 17px;
+                    width: 28px;
+                    text-align: center;
+                }
+                svg{
+                    font-size: 21px;
+                    stroke: $themeColor;
+                    position: relative;
+                    path {
+                        fill: $themeColor !important;
+                    }
+                }
+                i{
+                    font-size: 1.2em;
+                    margin-right: 17px;
+                    width: 28px;
+                    text-align: center;
+                    color: $themeColor;
+                }
+                span{
+                    transition: opacity .3s;
+                }
+                .active > &{
+                    opacity: 1;
+                }
+                .theme--dark &{
+                    color: scale-color($color, $lightness: 80%);
+                }
+            }
+        }
+    }
+    &--footer{
+        user-select: none;
+        flex: 0 1 auto;
+        padding: 1em 1em;
+        font-size: .85em;
+        transition: .3s;
+        &-hr{
+            width: 25px;
+            height: 1px;
+            background-color: #dfdfdf;
+            margin: .35em 0;
+        }
+        a{
+            text-decoration: none;
+            color: $color;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+        .hide-nav &{
+            display: none;
+        }
+    }
+}

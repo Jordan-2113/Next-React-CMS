@@ -1,0 +1,70 @@
+@import './variables';
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: $font;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: $backgroundColor;
+    color: $color;
+    overflow-x: hidden;
+    letter-spacing: .3px;
+    &.preload *{
+        transition: none !important;
+        animation-duration: 0s !important;
+        -webkit-animation-duration: 0s !important;
+        transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
+    }
+    &.theme--dark{
+        background-color: grayscale(darken($color: $backgroundColor, $amount: 83%));
+        color: scale-color($color, $lightness: 80%);
+    }
+}
+
+fieldset{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    legend{
+        position: fixed;
+        left: -50000px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+}
+
+.a11y{
+    position: fixed;
+    top: -50000px;
+    left: -50000px;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    font-size: 20px;
+    user-select: none;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.error{
+    color: #d82323;
+}
+
+#nprogress{
+    .bar {
+        background: $themeColor !important;
+    }
+    .peg {
+        box-shadow: 0 0 10px $themeColor, 0 0 5px $themeColor;
+    }
+    .spinner-icon {
+        border-top-color: $themeColor;
+        border-left-color: $themeColor;
+    }
+}

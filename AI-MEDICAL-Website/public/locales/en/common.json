@@ -1,0 +1,31 @@
+{
+	"Header": {
+		"00": "/images/logo.png",
+		"01": "Home",
+		"02": "About Us",
+		"03": "News",
+		"04": "Professional Team",
+		"05": "APP",
+		"06": "Contact Us",
+		"07": "Lang"
+	},
+	"Footer": {
+	  	"01": "Download APP"
+  	},
+  	"General": {
+		"01": "Learn More",
+		"02": "View More",
+		"03": "View"
+  	},
+	"Home": {
+    	"S0201": "Follow Us",
+    	"S0205": "Download APP",
+    	"S0206": "Contact Us",
+		"S0210": "WeChat: "
+    },
+	"ContactUs": {
+		"S0101": "For enquiries, please contact us by calling",
+		"S0103": "or via email at",
+		"S0104": ""
+	}
+}

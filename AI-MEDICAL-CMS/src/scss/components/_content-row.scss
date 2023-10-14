@@ -1,0 +1,176 @@
+@import '../variables';
+
+.content-row{
+    padding: .6em 1em;
+    background-color: #fff;
+    margin: .6em 0;
+    border-radius: 8px;
+    border: 1px solid #fff;
+    box-shadow: $blockBoxShadow;
+    &.bulk-select-bar--selectable{
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: 4px;
+            border-top: 2px solid rgba($color: #000000, $alpha: .3);
+            border-right: 2px solid rgba($color: #000000, $alpha: .3);
+            height: 5px;
+            width: 10px;
+            transform: rotate(135deg);
+            cursor: pointer;
+            transition: .3s;
+            .theme--dark &{
+                border-color: rgba($color: #eaeaea, $alpha: .3);
+            }
+        }
+        &.bulk-select-bar--selected{
+            &::before{
+                border-top: 2px solid #000000;
+                border-right: 2px solid #000000;
+                .theme--dark &{
+                    border-color: #eaeaea;
+                }
+            }
+        }
+    }
+    &.bulk-select-bar--selected{
+        background-color: scale-color($themeColor, $lightness: 97%);
+        border: 1px solid #d1d1d1;
+        .theme--dark &{
+            background-color: grayscale(darken($color: $backgroundColor, $amount: 85%));
+            border-color: #666666;
+        }
+    }
+    &--wrapper{
+        display: flex;
+        min-height: 110px;
+    }
+    &--pic{
+        flex: 0 1 200px;
+        position: relative;
+        width: 200px;
+        height: 140px;
+        border-radius: 5px;
+        background-color: #eaeaea;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-right: 1.5em;
+    }
+    &--body{
+        flex: 1;
+        overflow: hidden;
+        margin: -2px 0;
+        margin-left: -2px;
+        padding-left: 2px;
+        display: flex;
+        flex-direction: column;
+        &.full{
+            margin: 0;
+        }
+    }
+    &--title{
+        margin: 2px 0;
+        font-size: 1.2em;
+        line-height: 1.35;
+        font-weight: bold;
+        .status-tag{
+            margin: 2px 0;
+            margin-left: 5px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+    &--intro{
+        color: #5c5c5c;
+        margin: 2px 0;
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: .98em;
+        line-height: 1.28;
+        .theme--dark &{
+            color: #a1a1a1;
+        }
+    }
+    &--attrs{
+        margin: 2.5px -16px;
+        display: flex;
+        align-items: stretch;
+        flex-wrap: wrap;
+        min-height: 42px;
+    }
+    &--attr{
+        display: inline-flex;
+        flex-direction: column;
+        margin: 3px 0;
+        padding: 0 16px;
+        max-width: 100%;
+        &-title{
+            color: #757575;
+            font-size: .85em;
+            line-height: 1.1;
+            .theme--dark &{
+                color: #b7b7b7;
+            }
+        }
+        &-fill{
+            flex: 1;
+            min-height: 3px;
+            max-height: 5px;
+        }
+        &-contents{
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: 350px;
+            line-height: 1.28;
+        }
+    }
+    &--actions{
+        margin: 0px -5px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    &--action{
+        padding: 3px;
+    }
+    &--fill{
+        flex: 1;
+        max-height: 12px;
+    }
+    &--empty{
+        flex: 1;
+        padding: 5px 0;
+    }
+    .theme--dark &{
+        background-color: #2d2d2d;
+        border-color: #2d2d2d;
+    }
+    @media (max-width: 767px) {
+        &--wrapper{
+            display: block;
+        }
+        &--pic{
+            width: 100%;
+            margin-bottom: .6em;
+            height: auto;
+            padding: 23%;
+            margin-right: 0;
+        }
+        &--body{
+            width: 100%;
+        }
+        &--attrs{
+            display: block;
+            margin: 0 -16px;
+        }
+        &--attr{
+            margin: 5px 0;
+        }
+    }
+}

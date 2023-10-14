@@ -1,0 +1,43 @@
+.dab {
+    max-width: 360px;
+    margin: 0 auto;
+    &--left{
+        margin: 0;
+        > *{
+            text-align: left !important;
+        }
+    }
+    &--badges{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+    }
+    &--app-store{
+        display: inline-block;
+        padding: 5px 0;
+        height: auto;
+        img {
+            width: 100%;
+            max-width: 190px;
+        }
+    }
+    &--play{
+        display: inline-block;
+        padding: 5px 0;
+        height: auto;
+        img {
+            width: 100%;
+            max-width: 190px;
+        }
+    }
+    &--qr-code{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        img {
+            width: 100%;
+            max-width: 230px;
+        }
+    }
+}

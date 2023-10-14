@@ -1,0 +1,58 @@
+@import '../variables';
+
+.bulk-select-bar{
+    position: fixed;
+    bottom: -200px;
+    left: $navWidth;
+    width: calc(100% - #{$navWidth});
+    background-color: #fff;
+    border-top: 1px solid #eaeaea;
+    transition: .3s;
+    z-index: 99;
+    &.show{
+        bottom: 0;
+    }
+    &--wrapper{
+        padding: .4em 2em;
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+    &--options{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 0 -.4em;
+    }
+    &--option{
+        padding: .2em .4em;
+    }
+    &--label{
+        padding: .2em .4em;
+    }
+    &--clear{
+        padding: .2em .4em;
+        button{
+            cursor: pointer;
+            font-size: 1.1em;
+            border: 0;
+            border-radius: 0;
+            background-color: transparent;
+            &:hover{
+                opacity: .8;
+            }
+        }
+    }
+    .theme--dark &{
+        background-color: #2d2d2d;
+        border-color: #6a6a6a;
+        &--clear{
+            button{
+                color: scale-color($color, $lightness: 80%);
+            }
+        }
+    }
+    .hide-nav &{
+        left: 62px;
+        width: calc(100% - 62px);
+    }
+}

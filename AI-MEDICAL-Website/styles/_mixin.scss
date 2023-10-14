@@ -1,0 +1,37 @@
+@mixin rwd-container {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+    max-width: 1450px;
+    &.large{
+      max-width: 1800px;
+    }
+    &.no-padding{
+      padding-left: 0;
+      padding-right: 0;
+    }
+}
+
+@mixin s-pm {
+  padding: $normal-padding-top-bottom $normal-padding-left-right;
+  margin: $normal-margin-top-bottom $normal-margin-left-right;
+}
+
+@mixin m-pm {
+  padding: $normal-padding-top-bottom*3 $normal-padding-left-right*3;
+  margin: $normal-margin-top-bottom*3 $normal-margin-left-right*3;
+}
+
+@mixin l-pm {
+  padding: $normal-padding-top-bottom*6 $normal-padding-left-right*6;
+  margin: $normal-margin-top-bottom*6 $normal-margin-left-right*6;
+}
+
+@mixin background-basic {
+  min-height: 40vh;
+  height: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

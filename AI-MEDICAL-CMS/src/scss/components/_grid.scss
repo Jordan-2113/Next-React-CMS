@@ -1,0 +1,19 @@
+.grid{
+    // fallback
+    margin: .8em 0;
+    &--wrapper{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    @supports (display: grid){
+        &--wrapper{
+            display: grid;
+            grid-gap: 0;
+        }
+        .card{
+            &--wrapper{
+                width: auto;
+            }
+        }
+    }
+}

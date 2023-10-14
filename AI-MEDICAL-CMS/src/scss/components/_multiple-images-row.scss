@@ -1,0 +1,166 @@
+@import '../variables';
+
+.multiple-images-row{
+    padding: .5em 1em;
+    background-color: #fff;
+    margin: .6em 0;
+    border-radius: 8px;
+    border: 1px solid #fff;
+    box-shadow: $blockBoxShadow;
+    &.bulk-select-bar--selectable{
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: 4px;
+            border-top: 2px solid rgba($color: #000000, $alpha: .3);
+            border-right: 2px solid rgba($color: #000000, $alpha: .3);
+            height: 5px;
+            width: 10px;
+            transform: rotate(135deg);
+            cursor: pointer;
+            transition: .3s;
+        }
+        &.bulk-select-bar--selected{
+            &::before{
+                border-top: 2px solid #000000;
+                border-right: 2px solid #000000;
+            }
+        }
+    }
+    &.bulk-select-bar--selected{
+        background-color: scale-color($themeColor, $lightness: 97%);
+        border: 1px solid #d1d1d1;
+    }
+    &--title{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin: 4px 0;
+        font-size: 1.2em;
+        line-height: 1.35;
+        font-weight: bold;
+        .status-tag{
+            margin-left: 5px;
+        }
+    }
+    &--intro{
+        color: #5c5c5c;
+        margin: 4px 0;
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: .98em;
+        line-height: 1.28;
+        .theme--dark &{
+            color: #a1a1a1;
+        }
+    }
+    &--attrs{
+        margin: 5px -16px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &--attr{
+        display: inline-flex;
+        flex-direction: column;
+        margin: 5px 0;
+        padding: 0 16px;
+        max-width: 100%;
+        &-title{
+            color: #757575;
+            font-size: .85em;
+            line-height: 1.1;
+            margin-bottom: 3px;
+            .theme--dark &{
+                color: #b7b7b7;
+            }
+        }
+        &-contents{
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: 350px;
+            line-height: 1.28;
+        }
+    }
+    &--images{
+        display: flex;
+        margin: 6px -8px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: .3em;
+    }
+    &--image{
+        position: relative;
+        margin: 0 8px;
+        &-holder{
+            flex: 1 1 225px;
+            position: relative;
+            width: 225px;
+            height: 140px;
+            border-radius: 8px;
+            background-color: #eaeaea;
+            &::after{
+                content: "";
+                display: table;
+                clear: both;
+                height: 150px;
+            }
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        &-alt{
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 2px 10px 3px 2px;
+            font-size: 14px;
+            background-color: #fff;
+            border-right: 1px solid #eaeaea;
+            border-bottom: 1px solid #eaeaea;
+            border-top-left-radius: 5px;
+            border-bottom-right-radius: 15px;
+            .selected &{
+                background-color: scale-color($themeColor, $lightness: 97%);
+            }
+        }
+    }
+    &--actions{
+        margin: 4px -2px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    &--action{
+        padding: 2px;
+    }
+    &--meta{
+        margin: 6px 0;
+    }
+    .theme--dark &{
+        background-color: #2d2d2d;
+        border-color: #2d2d2d;
+        &--image{
+            &-holder{
+                background-color: #eaeaea;
+            }
+            &-alt{
+                background-color: #2d2d2d;
+                border-color: #717171;
+            }
+        }
+    }
+    @media (max-width: 767px) {
+        &--attrs{
+            display: block;
+            margin: 2px -16px;
+        }
+        &--attr{
+            margin: 5px 0;
+        }
+    }
+}

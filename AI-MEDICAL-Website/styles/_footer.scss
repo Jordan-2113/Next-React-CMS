@@ -1,0 +1,14 @@
+.footer{
+  background-color: $light-gray;
+  padding: 1.2em 0;
+  &--title{
+    font-weight: bold;
+  }
+  &--badge{
+    padding: 1em 0;
+  }
+  &--cr{
+      padding: 0 !important;
+      margin: 0 !important;
+  }
+}

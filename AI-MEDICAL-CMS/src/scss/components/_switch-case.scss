@@ -1,0 +1,17 @@
+.switch-case{
+    width: 100%;
+    &--el{
+        display: flex;
+        margin: 0 -5px;
+        align-items: flex-start;
+        &-select{
+            padding: 0 5px;
+            flex: 0 1 auto;
+            min-width: 150px;
+        }
+        &-fields{
+            padding: 0 5px;
+            flex: 1 1 auto;
+        }
+    }
+}

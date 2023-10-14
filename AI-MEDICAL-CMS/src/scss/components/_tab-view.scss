@@ -1,0 +1,42 @@
+@import '../variables';
+
+.tab-view{
+    &--controls{
+        margin: .8em -6px;
+        &.inline{
+            margin: 3px -6px;
+        }
+    }
+    &--control{
+        display: inline-block;
+        vertical-align: middle;
+        margin: 3px 0;
+        padding: 0 6px;
+        &-btn{
+            position: relative;
+            border: 1px solid scale-color($themeColor, $lightness: 85%);
+            padding: 8px 20px;
+            border-radius: 20px;
+            background-color: scale-color($themeColor, $lightness: 85%);
+            color: scale-color($themeColor, $lightness: -32%);
+            font-size: 1em;
+            cursor: pointer;
+            height: 100%;
+            user-select: none;
+            outline: none;
+            &.active{
+                border: 1px solid $themeColor;
+                background-color: $themeColor;
+                color: if($btnForegroundLighter == true, #fff, #000);
+            }
+            &:focus{
+                border: 1px solid #7a7a7a;
+            }
+            &:hover{
+                &:not(.active){
+                    opacity: .8;
+                }
+            }
+        }
+    }
+}

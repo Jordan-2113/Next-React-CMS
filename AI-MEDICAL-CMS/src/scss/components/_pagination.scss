@@ -1,0 +1,71 @@
+@import '../variables';
+
+.pagination{
+    user-select: none;
+    margin: 1.2em 0;
+    &--wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        margin: -3px -5px;
+        > * {
+            margin: 3px 5px;
+        }
+    }
+    &--page{
+        border-radius: 8px;
+        background-color: #fff;
+        padding: 6px 15px;
+        color: #000;
+        text-decoration: none;
+        min-width: 39px;
+        text-align: center;
+        border: 0;
+        font-family: $font;
+        font-size: 1rem;
+        cursor: pointer;
+        box-shadow: $blockBoxShadow;
+        &:hover{
+            opacity: .8;
+        }
+        &.active{
+            opacity: 1 !important;
+            background-color: scale-color($themeColor, $lightness: 80%);
+            color: darken($color: $themeColor, $amount: 12%);
+            cursor: default;
+        }
+    }
+    &--arrow{
+        padding: 6px 10px;
+        &::after{
+            content: "";
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+        svg{
+            display: inline-block;
+            vertical-align: middle;
+            stroke: #000;
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .theme--dark &{
+        &--page{
+            background-color: #2d2d2d;
+            color: scale-color($color, $lightness: 80%);
+            &.active{
+                background-color: grayscale(darken($color: $backgroundColor, $amount: 42%));
+                color: grayscale(darken($color: mix($themeColor, #000), $amount: 25%));
+            }
+        }
+        &--arrow{
+            svg{
+                path{
+                    stroke: scale-color($color, $lightness: 80%);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+@import '../variables';
+
+.header{
+    flex: 0 1 auto;
+    display: flex;
+    align-items: center;
+    padding: 1em 1em;
+    width: $navWidth;
+    a{
+        display: inline-block;
+        padding-right: 5px;
+        font-size: 0;
+        transition: opacity .3s;
+    }
+    img{
+        // width: 100%;
+        // max-width: 230px;
+        height: 75px;
+        border: 0;
+    }
+    &--toggle-collapse{
+        background-color: transparent;
+        border: 0;
+        -webkit-appearance: none;
+        padding: 5px 5px;
+        margin-right: 12px;
+        font-size: 0;
+        cursor: pointer;
+        outline: none;
+        svg{
+            width: 20px;
+            height: 20px;
+        }
+        path{
+            stroke: #000;
+            stroke-width: 2px;
+            .theme--dark &{
+                stroke: #e8e8e8;
+            }
+        }
+    }
+    .hide-nav &{
+        a{
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+    .float-open &{
+        a{
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+    @media (min-width: 1300px) {
+        &--toggle-collapse{
+            display: none;
+        }
+    }
+}

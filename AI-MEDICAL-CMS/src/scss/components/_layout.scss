@@ -1,0 +1,16 @@
+@import '../variables';
+@import '../mixin/breakpoints';
+@import '../mixin/grid';
+@import '../mixin/grid-framework';
+
+.layout{
+    &--box{
+        margin: 1em 0;
+    }
+    // bootstrap 4.6.1
+    &--row {
+        @include make-row();
+    }
+}
+
+@include make-grid-columns();

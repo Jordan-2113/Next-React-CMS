@@ -1,0 +1,6 @@
+.main-container{
+    @include rwd-container;
+    &--wrapper{
+        overflow: hidden;
+    }
+}

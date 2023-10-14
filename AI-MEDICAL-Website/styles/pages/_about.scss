@@ -1,0 +1,47 @@
+.about{
+    &--quota{
+        padding: 2.5em 0;
+        font-weight: bold;
+        max-width: 930px;
+        margin: 0 auto;
+        position: relative;
+        &-left, &-right{
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background-position: center;
+            background-size: cover;
+        }
+        &-left{
+            top: 50%;
+            transform: translateY(-25%);
+            left: -65px;
+        }
+        &-right{
+            top: 0;
+            transform: translateY(-15%);
+            right: -65px;
+        }
+    }
+    &--desc{
+        max-width: 930px;
+        margin: 0 auto;
+    }
+    &--doctor{
+        position: relative;
+        height: 100%;
+        &-wrapper{
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            max-width: 125%;
+            overflow: hidden;
+        }
+        img{
+            position: relative;
+            height: 100%;
+            z-index: -1;
+        }
+    }
+}

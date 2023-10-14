@@ -1,0 +1,16 @@
+.inline-option{
+    display: inline-block;
+    user-select: none;
+    &--controls{
+        display: flex;
+        align-items: center;
+        margin: 0 -8px;
+    }
+    &--control{
+        margin: 0 8px;
+    }
+    &--title{
+        margin: 0 8px;
+        white-space: nowrap;
+    }
+}

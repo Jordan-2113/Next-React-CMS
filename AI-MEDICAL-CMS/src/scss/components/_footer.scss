@@ -1,0 +1,25 @@
+@import '../variables';
+
+.footer{
+    user-select: none;
+    flex: 0 1 auto;
+    padding: 1em 1em;
+    font-size: .85em;
+    transition: .3s;
+    &--hr{
+        width: 25px;
+        height: 1px;
+        background-color: #dfdfdf;
+        margin: .35em 0;
+    }
+    a{
+        text-decoration: none;
+        color: $color;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    .hide-nav &{
+        display: none;
+    }
+}

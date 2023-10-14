@@ -1,0 +1,46 @@
+.doctor{
+    &--title{
+        width: 100%;
+        padding: 10px 0;
+        background: linear-gradient(to right, rgba(#337ABB, .3), rgba(#337ABB, .3) 30%, rgba(#337ABB, 0));
+        margin: 1em 0;
+    }
+    &--wrapper{
+        padding: 2em 0;
+        max-width: 1160px;
+        margin: 0 auto;
+    }
+    &--profile{
+        @media (min-width: 768px) {
+            padding-left: 20px;
+        }
+    }
+    &--descrption{
+        min-height: 80px;
+        @media (min-width: 768px) {
+            padding-right: 2.5%;
+        }
+    }
+    &--qualifications{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li{
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+            &::before{
+                content: "";
+                display: inline-block;
+                margin-right: 10px;
+                width: 4px;
+                height: 4px;
+                background-color: #707070;
+                border-radius: 50%;
+            }
+            p{
+                margin: 0;
+            }
+        }
+    }
+}

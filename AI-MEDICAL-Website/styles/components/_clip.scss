@@ -1,0 +1,34 @@
+.clip{
+    &--all{
+        border-radius: 30px;
+    }
+    &--tl{
+        border-top-left-radius: 30px;
+    }
+    &--tr{
+        border-top-right-radius: 30px;
+    }
+    &--bl{
+        border-bottom-left-radius: 30px;
+    }
+    &--br{
+        border-bottom-right-radius: 30px;
+    }
+    @media (min-width: 768px) {
+        &--all{
+            border-radius: 60px;
+        }
+        &--tl{
+            border-top-left-radius: 60px;
+        }
+        &--tr{
+            border-top-right-radius: 60px;
+        }
+        &--bl{
+            border-bottom-left-radius: 60px;
+        }
+        &--br{
+            border-bottom-right-radius: 60px;
+        }
+    }
+}

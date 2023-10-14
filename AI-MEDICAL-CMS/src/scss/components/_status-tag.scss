@@ -1,0 +1,53 @@
+@import '../variables';
+
+.status-tag{
+    position: relative;
+    padding: 3px 15px;
+    padding-left: 28px;
+    display: inline-block;
+    background-color: #fff;
+    color: #7a7a7a;
+    border-radius: 15px;
+    user-select: none;
+    font-size: .8rem;
+    font-weight: 400;
+    white-space: nowrap;
+    align-self: center;
+    margin: .2em 0;
+    box-shadow: $blockBoxShadow;
+    &::before{
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        width: 6px;
+        height: 6px;
+        background-color: #7a7a7a;
+        border-radius: 50%;
+        transform: translateY(-50%);
+    }
+    &--active{
+        $color: #07840b;
+        color: $color;
+        background-color: scale-color($color, $lightness: 95%);
+        &::before{
+            background-color: $color;
+        }
+    }
+    &--warning{
+        $color: #847007;
+        color: $color;
+        background-color: scale-color($color, $lightness: 90%);
+        &::before{
+            background-color: $color;
+        }
+    }
+    &--error{
+        $color: #b24619;
+        color: $color;
+        background-color: scale-color($color, $lightness: 90%);
+        &::before{
+            background-color: $color;
+        }
+    }
+}

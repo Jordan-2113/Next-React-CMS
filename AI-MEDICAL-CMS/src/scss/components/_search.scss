@@ -1,0 +1,84 @@
+@import '../variables';
+
+.search{
+    margin: 10px 0;
+    &--wrapper{
+        display: flex;
+        align-items: center;
+    }
+    &--filter{
+        cursor: pointer;
+        background-color: transparent;
+        border: 0;
+        -webkit-appearance: none;
+        padding: 5px 8px;
+        padding-left: 0;
+        width: 30px;
+        height: 30px;
+        outline: none;
+        color: #404040;
+        svg{
+            transform: scale(1.25);
+            &:hover{
+                opacity: .8;
+            }
+        }
+        &.active{
+            color: $themeColor;
+        }
+        &:focus-visible{
+            opacity: .5;
+        }
+        &-btn-row{
+            margin-top: .8em;
+        }
+        .theme--dark &{
+            color: #7a7a7a;
+        }
+    }
+    &--form{
+        flex: 1;
+        &-wrapper{
+            position: relative;
+            display: flex;
+            margin: 0 -5px;
+            align-items: center;
+        }
+        &-type{
+            padding: 0 5px;
+            max-width: 220px;
+            width: 40%;
+        }
+        &-value{
+            position: relative;
+            flex: 1;
+            padding: 0 5px;
+            .field--text-input{
+                padding-right: 38px;
+                &::-ms-clear {
+                    display: none;
+                    height: 0;
+                    width: 0;
+                }
+            }
+            &-clear{
+                top: 50%;
+                transform: translateY(-50%);
+                position: absolute;
+                right: 13px;
+                background-color: transparent;
+                border: 0;
+                padding: 5px 8px;
+                cursor: pointer;
+                font-size: 1.2em;
+            }
+        }
+        &-submit{
+            padding: 0 5px;
+            align-self: stretch;
+            > * {
+                height: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,90 @@
+.panel-head{
+    user-select: none;
+    &--wrapper{
+        padding: 1em 0;
+        display: flex;
+        align-items: stretch;
+        margin: 0 -22px;
+    }
+    &--title{
+        padding: 0 22px;
+        flex-grow: 1;
+        font-size: 1.55em;
+        font-weight: 700;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    &--actions{
+        padding: 0 22px;
+    }
+    &--account{
+        padding: 0 22px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 -10px;
+        &-icon{
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        &-name{
+            position: relative;
+            // top: -5px;
+            font-size: 1.3em;
+            font-weight: bold;
+            vertical-align: bottom;
+            white-space: nowrap;
+            padding: 0 10px;
+            text-transform: uppercase;
+        }
+        &-password{
+            font-size: 23px;
+            padding: 5px 10px;
+            color: #3b3b3b;
+            line-height: 23px;
+            &:hover{
+                opacity: .8;
+            }
+        }
+        &-more{
+            position: relative;
+            // top: -2px;
+            padding: 5px 10px;
+            border: 0;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: 0;
+            svg{
+                fill: #3b3b3b;
+            }
+            &:hover{
+                opacity: .8;
+            }
+            .theme--dark &{
+                svg{
+                    fill: #e8e8e8;
+                }
+            }
+        }
+    }
+    &--setting{
+        font-size: 25px;
+        padding: 5px 10px;
+        color: #3b3b3b;
+        line-height: 25px;
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+        svg{
+            fill: #3b3b3b;
+        }
+        &:hover{
+            opacity: .8;
+        }
+    }
+}

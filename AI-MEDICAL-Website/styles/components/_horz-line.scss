@@ -1,0 +1,13 @@
+.horz-line{
+    display: flex;
+    align-items: center;
+    &--wrapper{
+        flex: 0 1 auto;
+        padding: 0 1.35em;
+    }
+    &--el{
+        flex: 1 auto;
+        height: 3px;
+        background-color: #ED2F19;
+    }
+}

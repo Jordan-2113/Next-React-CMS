@@ -1,0 +1,71 @@
+@import '../variables';
+
+.main-panel{
+    height: 100vh;
+    width: 100%;
+    &--nav{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: $navWidth;
+        height: 100%;
+        overflow: hidden;
+        // filter for popup-side-panel
+        transition: width .3s, box-shadow .3s;
+        z-index: 999;
+        .hide-nav > &{
+            width: 62px;
+        }
+        .float-open > &{
+            width: $navWidth;
+            box-shadow: 0 0 12px rgba(0, 0, 0, .05);
+        }
+    }
+    &--core{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        margin-left: 300px;
+        width: calc(100% - #{$navWidth});
+        .hide-nav > &{
+            margin-left: 62px;
+            width: calc(100% - 62px);
+        }
+        &-container{
+            max-width: 1600px;
+            padding: 1em 2em;
+            margin: 0 auto;
+        }
+        &-head{
+            flex: 0 1 auto;
+            border-bottom: 1px solid #eaeaea;
+            .theme--dark &{
+                border-color: #3b3b3b;
+            }
+        }
+        &-wrapper{
+            flex: 1 auto;
+        }
+        &-bottom{
+            flex: 0 1 auto;
+        }
+    }
+    &--error{
+        svg{
+            width: 100%;
+            max-width: 250px;
+            margin: 2em 0;
+        }
+        &-title{
+            font-size: 26px;
+            font-weight: bold;
+            margin: 1em 0;
+        }
+        &-desc{
+            margin: .5em 0;
+        }
+        &-path{
+            fill: $themeColor;
+        }
+    }
+}

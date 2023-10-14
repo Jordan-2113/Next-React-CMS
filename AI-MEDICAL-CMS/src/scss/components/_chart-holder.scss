@@ -1,0 +1,22 @@
+@import '../variables';
+
+.chart-holder{
+    padding: .8em 1.3em;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: $blockBoxShadow;
+    height: 100%;
+    .theme--dark &{
+        background-color: #2d2d2d;
+    }
+    &--wrapper{
+        position: relative;
+    }
+    &--chart{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}

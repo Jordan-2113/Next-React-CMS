@@ -1,0 +1,65 @@
+.shortcut{
+    position: fixed;
+    right: 0;
+    bottom: 90px;
+    z-index: 99;
+    &--whatsapp{
+        display: none;
+        &:hover{
+            color: #fff;
+            opacity: .9;
+            > span {
+                display: block;
+            }
+        }
+        @media (min-width: 992px) {
+            display: inline-flex;
+            align-items: center;
+            background-color: #57BC54;
+            color: #fff;
+            padding: 15px 15px;
+            border-radius: 35px;
+            box-shadow: 0 3px 6px rgba(#000, .16);
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: 0 16px;
+            font-size: 1.05em;
+        }
+        img {
+            width: 32px;
+        }
+        span {
+            display: none;
+            margin-right: 8px;
+        }
+    }
+    &--download{
+        display: inline-flex;
+        align-items: center;
+        background-color: #4E8DCB;
+        border-radius: 20px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        padding: 10px 16px;
+        color: #fff;
+        box-shadow: 0 3px 6px rgba(#000, .16);
+        &:hover{
+            color: #fff;
+            opacity: .9;
+        }
+        @media (min-width: 992px) {
+            display: none;
+        }
+        &-icon{
+            width: 30px;
+            img{
+                width: 100%;
+            }
+        }
+        &-wrapper{
+            margin-left: 12px;
+            font-size: 1.2em;
+            line-height: 1.4;
+        }
+    }
+}

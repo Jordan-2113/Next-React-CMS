@@ -1,0 +1,125 @@
+@import '../variables';
+
+#root{
+    &.popup-side-panel--blur{
+        .main-panel--core-wrapper, .main-panel--nav, .panel-head{
+            filter: saturate(180%) blur(6px);
+        }
+    }
+}
+
+.popup-side-panel{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    user-select: none;
+    z-index: 999999;
+    &.show{
+        user-select: initial;
+        pointer-events: all;
+    }
+    &--wrapper{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        width: 350px;
+        max-width: 100%;
+        height: 100%;
+        background-color: #fff;
+        overflow: hidden;
+        transition: .3s;
+        &.left {
+            left: -350px;
+        }
+        .show &.left {
+            left: 0;
+        }
+        &.right {
+            right: -350px;
+        }
+        .show &.right {
+            right: 0;
+        }
+        .theme--dark &{
+            background-color: #2d2d2d;
+        }
+    }
+    &--bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: .3s;
+        .show &{
+            // backdrop-filter: blur(6px);
+            background-color: rgba($color: #000000, $alpha: 0.1);
+        }
+    }
+    &--head{
+        display: flex;
+        align-items: center;
+        padding: 18px;
+        border-bottom: 1px solid #eaeaea;
+        margin: 0 -5px;
+        .theme--dark &{
+            border-color: #474747;
+        }
+    }
+    &--title{
+        flex: 1 0 auto;
+        font-size: 1.1em;
+        font-weight: bold;
+        padding: 0 5px;
+    }
+    &--close{
+        button{
+            background-color: transparent;
+            border: 0;
+            padding: 0 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            .theme--dark &{
+                color: #fff;
+            }
+        }
+    }
+    &--scrollable{
+        flex: 1;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    &--body{
+        display: table;
+        width: 100%;
+        padding: 15px 18px;
+        &-wrapper{
+            display: table-cell;
+        }
+    }
+    &--items{
+        margin: -12px 0;
+    }
+    &--item{
+        font-family: $font;
+        font-size: 1em;
+        border: 0;
+        background-color: #f5f5f5;
+        padding: 12px 20px;
+        border-radius: 12px;
+        -webkit-appearance: none;
+        cursor: pointer;
+        outline: none;
+        margin: 12px 0;
+        display: block;
+        text-align: left;
+        &:hover, &:focus{
+            opacity: .8;
+        }
+    }
+}

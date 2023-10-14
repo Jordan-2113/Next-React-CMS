@@ -1,0 +1,28 @@
+.app-privacy {
+    &--title {
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+    &--parentheses {
+        counter-reset: list;
+        & > li {
+            list-style: none;
+            position: relative;
+            &:before {
+                content: counter(list) ")";
+                counter-increment: list;
+                left: -40px;
+                padding-right: 10px;
+                position: absolute;
+                text-align: right;
+                width: 40px;
+            }
+        }
+        &[type="a"] {
+            & > li:before {
+                content: counter(list, lower-alpha) ")";
+            }
+        }
+    }
+}

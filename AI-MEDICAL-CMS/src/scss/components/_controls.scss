@@ -1,0 +1,15 @@
+.controls {
+    margin: .8em 0;
+    &--wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -5px;
+    }
+    &--el{
+        padding: 0 5px;
+        margin: 3px 0;
+    }
+    &--space{
+        flex: 1 auto;
+    }
+}

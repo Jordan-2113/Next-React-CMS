@@ -1,0 +1,73 @@
+@import '../variables';
+
+.styled-button{
+    &--1{
+        font-family: $font;
+        display: inline-block;
+        padding: 8px 18px;
+        background-color: darken($color: $themeColor, $amount: 3%);
+        color: if($btnForegroundLighter == true, #fff, #000);
+        cursor: pointer;
+        border-radius: 8px;
+        font-size: .95rem;
+        user-select: none;
+        border: 0;
+        text-decoration: none;
+        outline: none;
+        min-width: 62px;
+        text-align: center;
+        box-shadow: $blockBoxShadow;
+        transition: .3s;
+        &:hover{
+            opacity: .8;
+        }
+        &:focus-visible{
+            opacity: .8;
+            outline: 2px solid if($btnForegroundLighter == true, #fff, #000);
+        }
+        &.light{
+            background-color: scale-color($themeColor, $lightness: 92%);
+            color: scale-color($themeColor, $lightness: -30%);
+            box-shadow: none;
+            svg{
+                path{
+                    fill: scale-color($themeColor, $lightness: -15%);
+                }
+            }
+            .theme--dark &{
+                background-color: grayscale(darken($color: $backgroundColor, $amount: 42%));
+                color: grayscale(darken($color: mix($themeColor, #000), $amount: 25%));
+                svg{
+                    path{
+                        fill: grayscale(darken($color: mix($themeColor, #000), $amount: 18%));
+                    }
+                }
+            }
+        }
+        &.normal{
+            padding: 10px 30px;
+            font-size: 1rem;
+        }
+        &.disabled, &:disabled{
+            opacity: .5;
+            cursor: default;
+        }
+        [class^="fa"] {
+            font-size: 1.15em;
+            color: darken($color: $themeColor, $amount: 5%);
+        }
+        svg {
+            max-width: 1.32em;
+            height: auto;
+            max-height: 1.32em;
+            path{
+                @if $btnForegroundLighter == true {
+                    fill: scale-color($themeColor, $lightness: 92%);
+                }
+                @else {
+                    fill: darken($color: $themeColor, $amount: 80%);
+                }
+            }
+        }
+    }
+}
