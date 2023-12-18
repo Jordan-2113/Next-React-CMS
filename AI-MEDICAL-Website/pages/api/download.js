@@ -8,4 +8,4 @@ export default function handler(req, res) {
         return res.redirect(`https://apps.apple.com/us/app/${process.env.NEXT_PUBLIC_APP_STORE}`);
     }
     return res.redirect(`https://play.google.com/store/apps/details?id=${process.env.NEXT_PUBLIC_PLAY_STORE}`);
-}
+} 

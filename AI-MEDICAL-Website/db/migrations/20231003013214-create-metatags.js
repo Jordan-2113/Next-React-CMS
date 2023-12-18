@@ -3,21 +3,21 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('metatags', {
       id: {
-        allowNull: false,
+        allowNull: true,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
       en_title: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING
       },
       tc_title: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING
       },
       sc_title: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING
       },
       en_description: {
@@ -30,16 +30,16 @@ module.exports = {
         type: Sequelize.STRING
       },
       priority: {
-        allowNull: false,
+        allowNull: true,
         defaultValue: 0,
         type: Sequelize.BIGINT
       },
       created_at: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE
       },
       updated_at: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE
       }
     });

@@ -5,42 +5,42 @@ module.exports = {
     await queryInterface.addColumn('specialties', 'alttext', {
       type: Sequelize.STRING,
       after: 'sc_description',
-      allowNull: false,
+      allowNull: true,
     });
     await queryInterface.addColumn('specialties', 'slug', {
       type: Sequelize.STRING(1000),
       after: 'alttext',
-      allowNull: false,
+      allowNull: true,
     });
     await queryInterface.addColumn('specialties', 'en_metaname', {
       type: Sequelize.STRING(1000),
       after: 'slug',
-      allowNull: false,
+      allowNull: true,
     });
     await queryInterface.addColumn('specialties', 'tc_metaname', {
       type: Sequelize.STRING(1000),
       after: 'en_metaname',
-      allowNull: false,
+      allowNull: true,
     });
     await queryInterface.addColumn('specialties', 'sc_metaname', {
       type: Sequelize.STRING(1000),
       after: 'tc_metaname',
-      allowNull: false,
+      allowNull: true,
     });
     await queryInterface.addColumn('specialties', 'en_metadesc', {
       type: Sequelize.STRING(1000),
       after: 'sc_metaname',
-      allowNull: false,
+      allowNull: true,
     });
     await queryInterface.addColumn('specialties', 'tc_metadesc', {
       type: Sequelize.STRING(1000),
       after: 'en_metadesc',
-      allowNull: false,
+      allowNull: true,
     });
     await queryInterface.addColumn('specialties', 'sc_metadesc', {
       type: Sequelize.STRING(1000),
       after: 'tc_metadesc',
-      allowNull: false,
+      allowNull: true,
     });
   },
 

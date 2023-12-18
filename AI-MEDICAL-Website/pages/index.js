@@ -466,7 +466,7 @@ export default function HomePage ({ services, specialties, banners, metatag }) {
                     {specialties.map((specialty, idx) => {
                       return (
                         <SwiperSlide key={idx}>
-                          <Link href={`/team/${specialty.id}`}>
+                          <Link href={`/team/${specialty.slug}`}>
                             <a>
                               <div className='home--slide'>
                                 <div className='home--slide-wrapper'>
@@ -617,7 +617,7 @@ export default function HomePage ({ services, specialties, banners, metatag }) {
                                     </h3>
                                   </div>
                                   <div className='text-dominant p-2 m-2'>
-                                    <Link href={`/service/${service.id}`}>
+                                    <Link href={`/service/${service.slug}`}>
                                       <a>
                                         <Appearance triangle>
                                           {t('General.01')}
@@ -791,12 +791,12 @@ export default function HomePage ({ services, specialties, banners, metatag }) {
 
 export async function getServerSideProps ({ locale }) {
   const res_specialties = await specialties.findAll({
-    attributes: ['id', 'icon', `${locale}_name`],
+    attributes: ['id', 'slug', 'icon', `${locale}_name`],
     order: [['priority', 'DESC']],
     limit: 10
   })
   const res_services = await services.findAll({
-    attributes: ['id', `${locale}_title`, 'picture'],
+    attributes: ['id', 'slug', `${locale}_title`, 'picture'],
     order: [
       ['priority', 'DESC'],
       ['updated_at', 'DESC']
@@ -825,11 +825,13 @@ export async function getServerSideProps ({ locale }) {
       })),
       services: Array.from(res_services).map(service => ({
         id: service.dataValues.id,
+        slug: service.dataValues.slug,
         title: service.dataValues[`${locale}_title`],
         picture: service.dataValues.picture
       })),
       specialties: Array.from(res_specialties).map(specialty => ({
         id: specialty.dataValues.id,
+        slug: specialty.dataValues.slug,
         name: specialty.dataValues[`${locale}_name`],
         icon: specialty.dataValues.icon
       })),

@@ -9,7 +9,7 @@ import fs from 'fs';
 
 const schema = Joi.object({
     id: Joi.string().required(),
-    priority: Joi.number().default(20),
+    priority: Joi.number().default(20), 
     link: Joi.string().optional().allow(""),
     picture: Joi.optional()
 })

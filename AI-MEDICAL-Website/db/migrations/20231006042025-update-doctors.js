@@ -5,42 +5,42 @@ module.exports = {
     await queryInterface.addColumn('doctors', 'alttext', {
       type: Sequelize.STRING,
       after: 'priority',
-      allowNull: false,
+      allowNull: true,
     });
     await queryInterface.addColumn('doctors', 'slug', {
       type: Sequelize.STRING(1000),
       after: 'alttext',
-      allowNull: false,
+      allowNull: true,
     });
     await queryInterface.addColumn('doctors', 'en_metaname', {
       type: Sequelize.STRING(1000),
       after: 'slug',
-      allowNull: false,
+      allowNull: true,
     });
     await queryInterface.addColumn('doctors', 'tc_metaname', {
       type: Sequelize.STRING(1000),
       after: 'en_metaname',
-      allowNull: false,
+      allowNull: true,
     });
     await queryInterface.addColumn('doctors', 'sc_metaname', {
       type: Sequelize.STRING(1000),
       after: 'tc_metaname',
-      allowNull: false,
+      allowNull: true,
     });
     await queryInterface.addColumn('doctors', 'en_metadesc', {
       type: Sequelize.STRING(1000),
       after: 'sc_metaname',
-      allowNull: false,
+      allowNull: true,
     });
     await queryInterface.addColumn('doctors', 'tc_metadesc', {
       type: Sequelize.STRING(1000),
       after: 'en_metadesc',
-      allowNull: false,
+      allowNull: true,
     });
     await queryInterface.addColumn('doctors', 'sc_metadesc', {
       type: Sequelize.STRING(1000),
       after: 'tc_metadesc',
-      allowNull: false,
+      allowNull: true,
     });
   },
 
